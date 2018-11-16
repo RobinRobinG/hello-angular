@@ -38,10 +38,10 @@ module.exports ={
     },
     update: function(req, res){
         const id = req.params.id;
-        Task.findOneAndUpdate({ _id: id }, req.body,
-                              // {$set:{ title:req.body.title, 
-                              //         description: req.body.description, 
-                              //         completed: req.body.completed}},
+        Task.findOneAndUpdate({ _id: id }, 
+                              {$set:{ title:req.body.title, 
+                                      description: req.body.description, 
+                                      completed: req.body.completed}},
                               function(err, data) {
                                 if(err) {
                                   console.log("Returned error", err);
